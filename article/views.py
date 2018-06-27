@@ -1,6 +1,12 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+from rest_framework import viewsets
+from django.contrib.auth.models import User
+from serializers import LikeSerializer, ArticleSerializer, CommentSerializer, UserSerializer
 
-from django.shortcuts import render
 
-# Create your views here.
+class UserViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    This viewset automatically provides `list` and `detail` actions.
+    """
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
