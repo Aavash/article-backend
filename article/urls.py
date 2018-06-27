@@ -4,6 +4,10 @@ from article import views
 
 router = DefaultRouter()
 
-router.register(r'snippets', views.SnippetViewSet)
+# router.register(r'snippets', views.SnippetViewSet)
+
+urlpatterns = [
+]
+
 
 

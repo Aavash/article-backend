@@ -1,0 +1,4 @@
+.idea
+*.pyc
+nano.save
+db.sqlite3
