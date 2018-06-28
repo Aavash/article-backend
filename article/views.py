@@ -60,9 +60,11 @@ class LikeDeleteAPIView(generics.DestroyAPIView):
     serializer_class = LikeSerializer
 
 
-# class CommentListAPIView(generics.ListAPIView):
-#     permission_classes = (permissions.IsAuthenticated,)
-#     serializer_class = CommentSerializer
+class CommentListAPIView(generics.ListAPIView):
+    model = Comment
+    queryset = Comment.objects.all()
+    permission_classes = (permissions.IsAuthenticated,)
+    serializer_class = CommentSerializer
 
 
 class CommentCreateAPIView(generics.CreateAPIView):
