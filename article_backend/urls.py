@@ -15,8 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from rest_framework_swagger.views import get_swagger_view
+from article_backend import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^article/', include('article.urls'))
 ]
+
+if settings.DEBUG:
+    # swagger
+    schema_view = get_swagger_view(title='RealHRSoft')
+    urlpatterns += [url(r'^root/', schema_view)]

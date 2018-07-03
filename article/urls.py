@@ -1,12 +1,5 @@
 from django.conf.urls import url, include
-from rest_framework.routers import DefaultRouter
-from rest_framework.urlpatterns import format_suffix_patterns
-
 from article import views
-
-router = DefaultRouter()
-
-# router.register(r'snippets', views.SnippetViewSet)
 
 urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls')),
@@ -24,6 +17,4 @@ urlpatterns = [
     url(r'^like/delete/(?P<pk>[0-9]+)/$', views.LikeDeleteAPIView.as_view(), name='like_delete'),
 ]
 
-
-urlpatterns = format_suffix_patterns(urlpatterns)
 
